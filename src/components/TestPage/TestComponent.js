@@ -1,29 +1,47 @@
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import theme from "../../styles/theme";
+import {HeaderLogo} from "../icons/logos";
 
 function TestComponent() {
     return (
         <>
-            <p> 테스트 페이지에 사용되는 컴포넌트!</p>
             <Link to={'/'}>
                 <GotoBtn>
                     홈페이지로 이동하기
                 </GotoBtn>
             </Link>
+            <DomWrap>
+                <ItemWrapper>
+                    <HeaderLogo/>
+                </ItemWrapper>
+            </DomWrap>
+
         </>
     );
 }
 
-const GotoBtn = styled.button `
-    
-    width: 100px;
-    height: 20%;
-    border-radius: 20px;
-    background: ${({theme}) => theme.backgroundColor.lightGray};
-    
-    
-`
-
 export default TestComponent;
 
+
+const DomWrap = styled.div`
+    margin-top: 55px;
+    border-radius: 400px 400px 0 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({theme}) => theme.backgroundColor.mainColor};
+    @media (max-width: ${({theme})=> theme.mobile}) {
+        border-radius: 200px 200px 0 0;
+    }
+`
+
+const GotoBtn = styled.button`
+    border-radius: 20px;
+    font-size: 20px;
+    background: ${({theme}) => theme.backgroundColor.lightGray};
+`
+const ItemWrapper = styled.div`
+ 
+    
+    `
