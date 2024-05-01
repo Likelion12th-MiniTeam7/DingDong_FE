@@ -33,6 +33,8 @@ const GlobalStyles = createGlobalStyle`
         background: transparent;
         cursor: pointer;
     }
+
+    
 `;
 
 export default GlobalStyles;
