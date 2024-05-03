@@ -1,10 +1,9 @@
 import {Routes,Route} from "react-router-dom";
 import TestPage from "./pages/TestPage";
 import HomePage from "./pages/HomePage";
-import styled from "styled-components";
 import MainPage from "./pages/Mainpage";
-import {Logo} from "./components/Icons/logos";
 import LoginPage from "./pages/LoginPage";
+import styled from "styled-components";
 
 function App() {
   return (
@@ -17,6 +16,7 @@ function App() {
                   <Route path={"/login"} element={<LoginPage/>}/>
               </Routes>
           </Container>
+
       </Wrapper>
 
 
@@ -39,6 +39,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
     width: 600px;
     height: 100vh;
+    overflow: scroll;
     background: ${({theme}) => theme.backgroundColor.white};
     @media (max-width:${({theme}) => theme.mobile} ) {
         width: 100vw;
