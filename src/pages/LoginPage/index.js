@@ -3,6 +3,7 @@ import LoginItems from "../../components/LoginPage/LoginItems";
 import styled from "styled-components";
 
 function LoginPage() {
+
     return (
         <>
             <DomWrap>
@@ -10,9 +11,9 @@ function LoginPage() {
                     <LogoBox>
                         <Logo/>
                     </LogoBox>
-                    <ComponentBox>
+                    <ItemsBox>
                         <LoginItems/>
-                    </ComponentBox>
+                    </ItemsBox>
                 </ItemWrap>
             </DomWrap>
         </>
@@ -29,10 +30,10 @@ const DomWrap = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
-    //align-items: center;
     background: ${({theme}) => theme.backgroundColor.mainColor};
     @media (max-width: ${({theme})=> theme.mobile}) {
         border-radius: 200px 200px 0 0;
+        margin-top: 50px;
     }
 `
 
@@ -45,12 +46,17 @@ const LogoBox = styled.div`
     justify-content: center;
     width: 130px;
     height: 130px;
+ 
 `
 
-const ComponentBox = styled.div`
+const ItemsBox = styled.div`
     margin-top: 150px;
     display: flex;
     justify-content: center;
     width: 130px;
     height: 130px;
+    @media (max-width: ${({theme})=> theme.mobile}) {
+        margin-top: 130px;
+    }
+    
 `
