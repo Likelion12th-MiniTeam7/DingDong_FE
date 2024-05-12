@@ -5,8 +5,17 @@ import JoinPage from "../../pages/JoinPage";
 import JoinClubPopup from "../Popup/JoinClubPopup";
 import CameraPopup from "../Popup/CameraPopup";
 import QrPopup from "../Popup/QrPopup";
+import {useDispatch, useSelector} from "react-redux";
+import {selectIsPopupShown, showPopup} from "../../redux/popup";
 
 function TestComponent() {
+    const dispatch = useDispatch()
+    const isPopupShown = useSelector(selectIsPopupShown);
+    const handleLogin = () => {
+        dispatch(showPopup());
+    };
+
+
     return (
         <>
             <p> 테스트 페이지에 사용되는 컴포넌트!</p>
@@ -15,22 +24,26 @@ function TestComponent() {
                     홈페이지로 이동하기
                 </GotoBtn>
             </Link>
-            {/*<LoginPopup/>*/}
+            <PopupBtn onClick={handleLogin}>팝업띄우기</PopupBtn>
+            {isPopupShown && <LoginPopup/>}
             {/*<JoinClubPopup/>*/}
-            <CameraPopup/>
+            {/*<CameraPopup/>*/}
             {/*<QrPopup/>*/}
         </>
     );
 }
 
 const GotoBtn = styled.button `
-    
     width: 100px;
     height: 20%;
     border-radius: 20px;
     background: ${({theme}) => theme.backgroundColor.lightGray};
-    
-    
+`
+const PopupBtn = styled.button `
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background: ${({theme}) => theme.backgroundColor.lightGray};
 `
 
 export default TestComponent;
