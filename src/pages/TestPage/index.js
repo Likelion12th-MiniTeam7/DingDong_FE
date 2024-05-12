@@ -14,10 +14,9 @@ function TestPage() {
     const user_data = [manager_user];
     console.log(user_data)
 
+
     return (
         <>
-            <Profile/>
-            <TestLogin/>
             <p>MockData TEST</p>
             <TestMockData data={data}/>
             <TestMyPageMockData data={user_data}/>
@@ -25,6 +24,7 @@ function TestPage() {
             테스트페이지입니다.
             </h1>
             <TestComponent />
+
         </>
     );
 }
