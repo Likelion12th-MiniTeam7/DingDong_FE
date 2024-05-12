@@ -42,6 +42,7 @@ const Wrapper = styled.div`
     background: #F5F5F5;
     
 `
+
 const Container = styled.div`
     width: 600px;
     height: 100vh;
@@ -53,4 +54,5 @@ const Container = styled.div`
         width: 100vw;
         height: 100vh;
     }
-`
+    
+    `
