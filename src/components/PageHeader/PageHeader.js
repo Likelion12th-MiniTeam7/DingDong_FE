@@ -63,7 +63,7 @@ const Wrap = styled.div`
     background: ${({theme}) => theme.backgroundColor.mainColor};
     @media (min-width: 600px) {
         width: 600px;
-        left: relative;
+        //left: relative;
     }
 `;
 
