@@ -6,7 +6,7 @@ import {useEffect, useMemo, useRef, useState} from "react";
 function RegistrationItems() {
     const fileInput = useRef(null);
     const [imgFile, setImgFile] = useState(null);
-
+  
     const handleUploadBtn =(e)=>{
         fileInput.current.click();
     };
@@ -44,6 +44,7 @@ function RegistrationItems() {
         alert('등록하기');
     }
 
+
     return (
         <>
             <Wrapper>
@@ -63,7 +64,6 @@ function RegistrationItems() {
                             />
                         </CameraBox>
                     </CameraWrap>
-
                     <ItemBox>
                         <p>동아리 이름</p>
                         <WriteInput placeholder={'우리 동아리 이름을 입력해 주세요'}/>
