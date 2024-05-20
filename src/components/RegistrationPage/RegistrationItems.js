@@ -4,7 +4,6 @@ import RecruitmentItems from "../../components/RegistrationPage/RecruitmentItems
 import {useEffect, useMemo, useRef, useState} from "react";
 
 function RegistrationItems() {
-
     const fileInput = useRef(null);
     const [imgFile, setImgFile] = useState(null);
 
@@ -28,8 +27,6 @@ function RegistrationItems() {
         console.log('e.target.files[0]',e.target.files[0]);
         console.log('imgFile',imgFile);
 
-
-
     };
 
     const showImage = useMemo(()=>{
@@ -43,24 +40,30 @@ function RegistrationItems() {
 
     }, [imgFile]);
 
+    const handleSubmit =()=>{
+        alert('등록하기');
+    }
 
     return (
         <>
             <Wrapper>
                 <Box>
-                    <CameraBox>
-                        <p>동아리 사진</p>
-                        <FileUploadBtn onClick={handleUploadBtn}>
-                            {showImage}
-                        </FileUploadBtn>
-                        <input
-                            type={'file'}
-                            ref={fileInput}
-                            accept={'image/jpeg, image/jpg, image/png'}
-                            onChange={handleUploadFile}
-                            style={{display: "none"}}
-                        />
-                    </CameraBox>
+                    <CameraWrap>
+                        <CameraBox>
+                            <p>동아리 사진</p>
+                            <FileUploadBtn onClick={handleUploadBtn}>
+                                {showImage}
+                            </FileUploadBtn>
+                            <input
+                                type={'file'}
+                                ref={fileInput}
+                                accept={'image/jpeg, image/jpg, image/png'}
+                                onChange={handleUploadFile}
+                                style={{display: "none"}}
+                            />
+                        </CameraBox>
+                    </CameraWrap>
+
                     <ItemBox>
                         <p>동아리 이름</p>
                         <WriteInput placeholder={'우리 동아리 이름을 입력해 주세요'}/>
@@ -88,8 +91,9 @@ function RegistrationItems() {
                     <RecruitmentItems/>
                 </Box>
                 <RegstrationBtnBox>
-                    <RegstrationBtn>등록하기</RegstrationBtn>
+                    <RegstrationBtn onClick={handleSubmit}>등록하기</RegstrationBtn>
                 </RegstrationBtnBox>
+
             </Wrapper>
         </>
     );
@@ -113,10 +117,17 @@ const Box = styled.div`
     border: 2px solid #CFE9DC;
 `;
 
+const CameraWrap = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 const CameraBox = styled.div`
     text-align: center;
     color: ${({theme})=> theme.colors.darkGray};
     margin-top: 10px;
+    
     p{
         font-weight: bold;
         font-size: 20px;
@@ -182,38 +193,6 @@ const WriteInput = styled.input`
         border: 2px solid ${({theme})=> theme.colors.mainColorDark};
     }
 `;
-
-// const CheckboxContainer = styled.div`
-//     display: flex;
-//     align-items: center;
-//     margin: 10px;
-// `;
-
-// const Checkbox = styled.div`
-//     display: flex;
-//     margin-right: 20px;
-//     cursor: pointer;
-
-//     input[type="checkbox"] {
-//         display: none;
-//     }
-
-//     span {
-//         display: inline-block;
-//         width: 20px;
-//         height: 20px;
-//         border: 2px solid ${({theme})=> theme.colors.darkGray};
-//         border-radius: 4px;
-//         margin-right: 8px;
-//         background-color: ${({checked}) => checked ? theme.colors.mainColorDark : 'transparent'};
-//         transition: background-color 0.3s ease;
-//     }
-// `;
-
-// const DateBox = styled.div`
-//     display: flex;
-//     margin-bottom: 30px;
-//`
 
 const RegstrationBtnBox = styled.div`
     display: flex;
