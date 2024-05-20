@@ -12,11 +12,8 @@ function QrPopup({onChange, qr_code}) {
                     </QrBox>
                     <FinishedQrBtn onClick={onChange}> 출석 완료</FinishedQrBtn>
                 </PopupContent>
-
             </Wrapper>
-
         </>
-
     );
 }
 
