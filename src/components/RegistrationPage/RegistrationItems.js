@@ -1,19 +1,12 @@
 import styled from "styled-components";
 import { CameraIcon } from "../Icons/logos";
 import RecruitmentItems from "../../components/RegistrationPage/RecruitmentItems";
-<<<<<<< HEAD
-import {useEffect, useMemo, useRef, useState} from "react";
 import moment from "moment";
-=======
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
->>>>>>> main
+
 
 function RegistrationItems() {
-  const fileInput = useRef(null);
-  const [imgFile, setImgFile] = useState(null);
-
-<<<<<<< HEAD
     const fileInput = useRef(null);
     const [imgFile, setImgFile] = useState(null);
     const [isOpen1, setIsOpen1] = useState(false);
@@ -23,19 +16,26 @@ function RegistrationItems() {
     const [date2, setDate2] = useState(moment(today).format("YYYY. MM. DD"));
     const [recruitmentStatus, setRecruitmentStatus] = useState(false);
 
-=======
-  const handleUploadBtn = (e) => {
-    fileInput.current.click();
-  };
->>>>>>> main
+    const handleUploadBtn = (e) => {
+        fileInput.current.click();
+    };
 
-  const handleUploadFile = (e) => {
-    const fileList = e.target.files;
-    if (fileList && fileList[0]) {
-      const url = URL.createObjectURL(fileList[0]);
-      console.log("url", url);
+    const handleUploadFile = (e) => {
+      const fileList = e.target.files;
+      if (fileList && fileList[0]) {
+        const url = URL.createObjectURL(fileList[0]);
+        console.log("url", url);
+  
+        setImgFile({
+          file: fileList[0],
+          thumbnail: url,
+          type: fileList[0].type,
+        });
+      }
+      console.log("e.target.files[0]", e.target.files[0]);
+      console.log("imgFile", imgFile);
+    };
 
-<<<<<<< HEAD
     const handleToggleCalendar1 = () => {
         setIsOpen1(!isOpen1);
         setIsOpen2(false);
@@ -59,116 +59,42 @@ function RegistrationItems() {
     const handleRecruitmentStatusChange = () => {
         setRecruitmentStatus(!recruitmentStatus);
     };
-=======
-      setImgFile({
-        file: fileList[0],
-        thumbnail: url,
-        type: fileList[0].type,
-      });
-    }
-    console.log("e.target.files[0]", e.target.files[0]);
-    console.log("imgFile", imgFile);
-  };
->>>>>>> main
 
-  const showImage = useMemo(() => {
-    if (!imgFile && imgFile == null) {
-      return <CameraIcon />;
-    }
-    return (
-<<<<<<< HEAD
-        <>
-            <Wrapper>
-                <Box>
-                    <CameraWrap>
-                        <CameraBox>
-                            <p>동아리 사진</p>
-                            <FileUploadBtn onClick={handleUploadBtn}>
-                                {showImage}
-                            </FileUploadBtn>
-                            <input
-                                type={'file'}
-                                ref={fileInput}
-                                accept={'image/jpeg, image/jpg, image/png'}
-                                onChange={handleUploadFile}
-                                style={{display: "none"}}
-                            />
-                        </CameraBox>
-                    </CameraWrap>
-                    <ItemBox>
-                        <p>동아리 이름</p>
-                        <WriteInput placeholder={'우리 동아리 이름을 입력해 주세요'}/>
-                    </ItemBox>
-                    <ItemBox>
-                        <p>동아리 가입 코드</p>
-                        <WriteInput placeholder={'숫자를 입력해 주세요.'}/>
-                    </ItemBox>
-                    <ItemBox>
-                        <p>활동 시간</p>
-                        <WriteInput placeholder={'ex) 매주 목요일 오후 7시'}/>
-                    </ItemBox>
-                    <ItemBox>
-                        <p>동아리 소개</p>
-                        <WriteClubActivity placeholder={'우리 동아리에 대해 소개해 주세요'}/>
-                    </ItemBox>
-                    <ItemBox>
-                        <p>활동 내용</p>
-                        <WriteClubActivity placeholder={'우리 동아리의 작년 활동 혹은 올해 활동에 대해 작성해 주세요.'} rows="4"/>
-                    </ItemBox>
-                    <ItemBox>
-                        <p>연락처</p>
-                        <WriteInput placeholder={'ex) 010-1234-5678'}/>
-                    </ItemBox>
-                    <RecruitmentItems
-                        isOpen1={isOpen1}
-                        isOpen2={isOpen2}
-                        date1={date1}
-                        date2={date2}
-                        recruitmentStatus={recruitmentStatus}
-                        handleToggleCalendar1={handleToggleCalendar1}
-                        handleToggleCalendar2={handleToggleCalendar2}
-                        handleDateChange1={handleDateChange1}
-                        handleDateChange2={handleDateChange2}
-                        handleRecruitmentStatusChange={handleRecruitmentStatusChange}
-                    />
-                </Box>
-                <RegstrationBtnBox>
-                    <RegstrationBtn>등록하기</RegstrationBtn>
-                </RegstrationBtnBox>
-            </Wrapper>
-        </>
-=======
+    const showImage = useMemo(() => {
+      if (!imgFile && imgFile == null) {
+        return <CameraIcon />;
+      }
+      return (
 
-      <img
-        src={imgFile.thumbnail}
-        alt={imgFile.type}
-        onClick={handleUploadBtn}
-      />
->>>>>>> main
-    );
-  }, [imgFile]);
+        <img
+          src={imgFile.thumbnail}
+          alt={imgFile.type}
+          onClick={handleUploadBtn}
+        />
+      );
+    }, [imgFile]);
 
-  useEffect(() => {
-    console.log("다시 한 번 실행됩니댜");
-  }, [imgFile]);
+    useEffect(() => {
+      console.log("다시 한 번 실행됩니댜");
+    }, [imgFile]);
 
-  const [values, setFormData] = useState({
-    club_name: "",
-    club_code: "",
-    club_time: "",
-    club_introduction: "",
-    club_details: "",
-    club_contact: "",
-  });
+    const [values, setFormData] = useState({
+      club_name: "",
+      club_code: "",
+      club_time: "",
+      club_introduction: "",
+      club_details: "",
+      club_contact: "",
+    });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    console.log(`Input ${name} value:`, value); // 콘솔 로그 추가
-  };
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+      console.log(`Input ${name} value:`, value); // 콘솔 로그 추가
+    };
   
 
   let navigate = useNavigate();
@@ -196,17 +122,21 @@ function RegistrationItems() {
     <>
       <Wrapper>
         <Box>
-          <CameraBox>
-            <p>동아리 사진</p>
-            <FileUploadBtn onClick={handleUploadBtn}>{showImage}</FileUploadBtn>
-            <input
-              type={"file"}
-              ref={fileInput}
-              accept={"image/jpeg, image/jpg, image/png"}
-              onChange={handleUploadFile}
-              style={{ display: "none" }}
-            />
-          </CameraBox>
+        <CameraWrap>
+            <CameraBox>
+                <p>동아리 사진</p>
+                <FileUploadBtn onClick={handleUploadBtn}>
+                    {showImage}
+                </FileUploadBtn>
+                <input
+                    type={'file'}
+                    ref={fileInput}
+                    accept={'image/jpeg, image/jpg, image/png'}
+                    onChange={handleUploadFile}
+                    style={{display: "none"}}
+                />
+            </CameraBox>
+          </CameraWrap>
           <ItemBox>
             <p>동아리 이름</p>
             <WriteInput
@@ -270,7 +200,18 @@ function RegistrationItems() {
               placeholder={"ex) 010-1234-5678"}
             />
           </ItemBox>
-          <RecruitmentItems />
+          <RecruitmentItems
+                        isOpen1={isOpen1}
+                        isOpen2={isOpen2}
+                        date1={date1}
+                        date2={date2}
+                        recruitmentStatus={recruitmentStatus}
+                        handleToggleCalendar1={handleToggleCalendar1}
+                        handleToggleCalendar2={handleToggleCalendar2}
+                        handleDateChange1={handleDateChange1}
+                        handleDateChange2={handleDateChange2}
+                        handleRecruitmentStatusChange={handleRecruitmentStatusChange}
+          />
         </Box>
         <RegstrationBtnBox>
           <RegstrationBtn onClick={handelSubmit} type={"submit"}>
@@ -360,8 +301,6 @@ const WriteClubActivity = styled.textarea`
   }
 `;
 
-<<<<<<< HEAD
-=======
 const WriteInput = styled.input`
   font-size: 15px;
   margin: 10px 10px 20px 10px;
@@ -376,7 +315,7 @@ const WriteInput = styled.input`
     border: 2px solid ${({ theme }) => theme.colors.mainColorDark};
   }
 `;
->>>>>>> main
+
 const RegstrationBtnBox = styled.div`
   display: flex;
   justify-content: center;
