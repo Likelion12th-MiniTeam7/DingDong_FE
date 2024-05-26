@@ -34,9 +34,10 @@ function LoginItems() {
             try{
                const response = await axios.post('https://dingdong7.pythonanywhere.com/login/',values,{withCredentials: true})
                 console.log('Response:', response);
-                console.log("token.access::",response.data.token.access);
-                // (name, value, options)
                 setCookie("access",response.data.token.access)
+                setCookie('user_id',response.data.user.user_id)
+                console.log('response.data.user.user_id',response.data.user.user_id);
+
                 dispatch(closePopup());
                 navigate('/main')
             }catch (error){
