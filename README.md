@@ -1,7 +1,7 @@
 # 🔔 딩동 DINGDONG
-<img width="736" alt="image" src="https://github.com/user-attachments/assets/9217c7c8-7cd1-465b-9ce7-83e581bcb768" />
-
 👆🏻 원하는 동아리의 초인종을 눌러주세요. 
+
+<img width="736" alt="image" src="https://github.com/user-attachments/assets/9217c7c8-7cd1-465b-9ce7-83e581bcb768" />
 
 https://ding-dong-fe.vercel.app/
 ## 💻 프로젝트 소개 
@@ -31,7 +31,7 @@ https://ding-dong-fe.vercel.app/
 
 | **김나연** | **이재현** | **조수빈** | **김정주** | **이홍규** | **홍수지** |
 | :------: |  :------: | :------: | :------: | :------: | :------: |
-| TeamLeader, BE |  BE | BE | FE | FF | FE |
+| Team Leader, BE |  BE | BE | FE | FF | FE |
 | <img src="나연이사진" height=200 > <br/> @나연이 깃허브 아이디 ](나연이 깃허브 링크) |  [<img src="재현이 사진" height=200> <br/> @재현이 깃허브 아이디](재현이 깃허브 링크) | [<img src="수빈이사진" height=200> <br/> @수빈이 깃허브 아이디 ](수빈이 깃허브 링크) | [<img src="https://github.com/user-attachments/assets/103798ae-f186-4604-b473-76ce83f76f92" height=200 > <br/> @KimJJRoSY ](https://github.com/KimJJRoSY) | [<img src="홍규 사진" height=200> <br/> @홍규 깃허브 아이디](홍규 깃허브 링크 ) | [<img src="수지 사진" height=200> <br/> @수지 깃허브 아이디](수지 깃허브 링크) | 
 
 
