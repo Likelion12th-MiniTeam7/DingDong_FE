@@ -3,7 +3,7 @@
 
 <img width="736" alt="image" src="https://github.com/user-attachments/assets/9217c7c8-7cd1-465b-9ce7-83e581bcb768" />
 
-https://ding-dong-fe.vercel.app/
+배포URL: https://ding-dong-fe.vercel.app/
 ## 💻 프로젝트 소개 
 **교내 동아리 정보 확인 및 활동 관리 서비스**
 
